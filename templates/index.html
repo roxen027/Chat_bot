@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurora — AI Chat</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="title">
+          <div class="name">Aurora</div>
+          <div class="subtitle">AI Assistant</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="btnNewConv" class="btn ghost">New</button>
+        <button id="btnToggleSidebar" class="btn icon-btn" title="Toggle history">
+          ☰
+        </button>
+        <label class="theme-switch">
+          <input id="themeToggle" type="checkbox"/>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="main">
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-inner">
+          <div class="sidebar-header">
+            <h3>Conversations</h3>
+            <button id="btnClearAll" class="btn small">Clear</button>
+          </div>
+          <ul id="historyList" class="history-list" aria-label="Chat history"></ul>
+        </div>
+      </aside>
+
+      <!-- Chat Area -->
+      <section class="chat-container">
+        <div id="chatWindow" class="chat-window" role="log" aria-live="polite">
+          <div class="welcome">
+            <h2>Welcome to Aurora</h2>
+            <p>Ask me anything — code help, ideas, or small talk.</p>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typingIndicator" class="typing-indicator hidden" aria-hidden="true">
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+        </div>
+
+        <!-- Floating Input -->
+        <form id="inputForm" class="input-bar" autocomplete="off">
+          <button type="button" id="btnAttach" class="icon-btn">＋</button>
+          <input id="messageInput" class="message-input" type="text" placeholder="Type your message..." required />
+          <button type="submit" id="btnSend" class="btn send">Send →</button>
+        </form>
+      </section>
+
+    </div>
+
+    <!-- Toast / Error -->
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
